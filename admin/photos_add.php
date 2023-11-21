@@ -2,7 +2,7 @@
 <?php
 
 
-    if (!isset($_SESSION['id'])) //{ redirect_to("../"); }
+    if (!isset($_SESSION['id'])) { redirect_to("../"); }
     $gallery = new Gallery();
     $booking = Booking::find_booking_all();
     if (isset($_POST['submit']) || isset($_FILES['file'])) {
@@ -95,7 +95,8 @@
                    </div>
                     <div class="form-group">
                        <label for="">Alternate Text:</label>
-                       <input type="text" name="alternate_text" value="<?= $gallery->alternate_text; ?>" class="form-control" placeholder="Enter text">
+                       <input type="text" name="alternate_text" value="<?=$gallery->alternate_text; ?>" class="form-control" placeholder="Enter text">
+                       
                    </div>
                    <div class="form-group">
                        <textarea name="description" rows="10" class="form-control" placeholder="Enter a description"><?= $gallery->description; ?></textarea>

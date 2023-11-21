@@ -29,18 +29,18 @@ class Features extends DB_Object
         return $the_object_array;
     }
 
-    // public static function getAllfeaturesEventsUser($booking_id) {
-    //     global $db;
-    //     $sql = "SELECT * FROM tbl_features INNER JOIN tblweddingcategories ON tblweddingcategories.id = tbl_features.category_id";
-    //     $result_set = $db->query($sql);
+    public static function getAllfeaturesEventsUser($booking_id) {
+        global $db;
+        $sql = "SELECT * FROM tbl_features INNER JOIN tblweddingcategories ON tblweddingcategories.id = tbl_features.category_id";
+        $result_set = $db->query($sql);
 
-    //     $the_object_array = array();
+        $the_object_array = array();
 
-    //     while($row = mysqli_fetch_array($result_set)) {
-    //         $the_object_array[] = static::instantiation($row);
-    //     }
-    //     return $the_object_array;
-    // }
+        while($row = mysqli_fetch_array($result_set)) {
+            $the_object_array[] = static::instantiation($row);
+        }
+        return $the_object_array;
+    }
     
 
 }

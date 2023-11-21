@@ -1,15 +1,15 @@
 <?php include_once 'include/init.php';?>
 <?php
  if (isset($_POST['login'])) {
-     $input_email = clean($_POST['input_email']);
-     $input_password= clean($_POST['input_password']);
+     $input_email = $_POST['input_email'];
+     $input_password= $_POST['input_password'];
      $logged = Users::user_account_login($input_email, $input_password);
 
      if($logged) {
          $session->login($logged);
-         redirect_to("dashboard.php");
+         header("Location:dashboard.php");
      } else {
-         redirect_to("login.php");
+        header("Location:login.php");
          $session->message("
             <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">
               <strong><i class='mdi mdi-alert'></i></strong>  Invalid email or password. Please try again

@@ -1,12 +1,12 @@
 <?php include 'include/init.php'; ?>
 
 <?php
-     if (!isset($_SESSION['id'])) { redirect_to("../");}
+     if (!isset($_SESSION['id'])) {header("Location:../");}
 
-     // $booking_id = $_GET['booking_id'];
-     // $user_id = $_GET['user_id'];
-     // $links='booking_id='.$booking_id.'&user_id='.$user_id;
-     // $guest_list =  Guest::getGuest($booking_id);
+     $booking_id = $_GET['booking_id'];
+     $user_id = $_GET['user_id'];
+     $links='booking_id='.$booking_id.'&user_id='.$user_id;
+     $guest_list =  Guest::getGuest($booking_id);
      $category = Category::find_all(); 
      $features = Features::getAllfeatures(); 
 ?>
@@ -47,7 +47,7 @@
         /* SuperBox */
         .superbox-list {
             display:inline-block;
-            *display:inline;
+            display:inline;
             zoom:1;
             width:12.5%;
         }
