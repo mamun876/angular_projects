@@ -1,8 +1,8 @@
 <?php include 'include/init.php'; ?>
 <?php
-    //  if (!isset($_SESSION['id'])) {
-    //      redirect_to("../");
-    //  }
+     if (!isset($_SESSION['id'])) {
+         redirect_to("../");
+     }
 
     $user_count =  Account_Details::count_user();
     $booking_count =  Booking::count_booking();

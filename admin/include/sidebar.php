@@ -71,6 +71,14 @@
                     </li>
                     <li class="nav-item"><div class="dropdown-divider"></div></li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="mdi mdi-account-box mr-3 fa fa-file fa-fw" style="color: #e91e63!important">Contact <span class="fa arrow"></span></i></a>
+                            <li>
+                                <a href="../contact.php">View</a>
+                            </li>
+                    </li>
+                    <li class="nav-item"><div class="dropdown-divider"></div></li>
+                    <li class="nav-item">
                         <a class="nav-link" href="users.php">
                             <i class="mdi mdi-account-card-details mr-3" style=" color: #03a9f4!important;"></i>
                             User Management

@@ -130,38 +130,61 @@
                         </div>
                     </div>
                 </div>
+                <?php 
+                      include 'admin/include/init.php';
+
+                ?>
                 <div class="bg-white mt-3 pt-1 pl-4 pb-3">
                     <div class="row mt-3">
                         <div class="col-md-12">
-                            <form action="" method="post" style="font-size: 12px;">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-row">
-                                            <div class="form-group col-md-12 mb-1">
-                                                <label for="contact_person">Name</label>
-                                                <input type="email" class="form-control" id="contact_person" placeholder="Enter contact person">
-                                            </div>
-                                            <div class="form-group col-md-12 mb-1">
-                                                <label for="contact_email">Email</label>
-                                                <input type="password" class="form-control" id="contact_email" placeholder="Enter email">
-                                            </div>
-                                            <div class="form-group col-md-12 mb-1">
-                                                <label for="contact_phone">Phone</label>
-                                                <input type="text" class="form-control" id="contact_phone" placeholder="Enter mobile phone">
-                                            </div>
-                                            <div class="form-group col-md-12 mb-1">
-                                                <label for="contact_message">Message</label>
-                                                <textarea type="text" class="form-control" style="resize: none;" rows="8" id="contact_message" placeholder="Enter message"></textarea>
-                                            </div>
+                        <table id="example" class="table table-striped table-hover table-bordered table-sm" cellspacing="0" width="100%" style="background: white;padding: 0 5px;">
 
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 pr-2">
-                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.804581750715!2d125.08993251421961!3d7.915471407613357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32ff1a2d27bfc2c5%3A0x49f6694edf036a5a!2sAMA+Computer+Learning+Center!5e0!3m2!1sen!2sph!4v1518944564341" width="95%" height="395" frameborder="0" style="border:0" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-sm rounded-0" style="font-size: 12px;margin-top: 10px;background: #22adb5;border: 0;">Send Message</button>
-                            </form>
+<thead>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Subject</th>
+        <th>Message</th>
+        
+    </tr>
+</thead>
+
+<tbody>
+   <?php 
+   $host ='localhost';
+   $user ='root';
+   $pass ='';
+   $database ='angular_projects';
+
+   $db = new mysqli ($host, $user, $pass, $database);
+
+    $sql = "SELECT * From  contact";
+    $result = $db->query($sql);
+    $i = 0;
+    while($row = $result->fetch_assoc()):
+   $i++
+   ?>
+    <tr>
+        
+        <td class="special"><?php echo $i ?></td>
+      
+        <td class="special"><?php echo $row['name'] ?></td>
+        
+        <td class="special"><?php echo $row['email'] ?></td>
+        
+        <td class="special"><?php echo $row['subject'] ?></td>
+        <td class="special"><?php echo $row['message'] ?></td>
+        
+
+    </tr>
+
+<?php 
+
+        endwhile
+?>
+</tbody>
+</table>
                         </div>
                     </div>
 
@@ -170,7 +193,7 @@
         </div>
     </div>
     <!-- MODAL LOGIN SECTION-->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+    <!-- <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -201,13 +224,13 @@
                                 </button>
                                 <a href="" style="color: #22adb5;">Forgot your password?</a>
                                 <br />
-                                <div class="mt-2">Not a member yet? <a href="" style="color: #22adb5;">Join Now</a></div </div>
+                                <div class="mt-2">Not a member yet? <a href="" style="color: #22adb5;">Join Now</a></div 
                             </div>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

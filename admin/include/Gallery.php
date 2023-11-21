@@ -79,7 +79,7 @@ class Gallery extends DB_Object
             }
             
             // $target_path =  SITE_ROOT . DS .  $this->upload_directory . DS . $this->filename;
-            $target_path =' upload/gallery/';
+            $target_path =' upload/gallery';
                      
             if(file_exists($target_path))
             {
